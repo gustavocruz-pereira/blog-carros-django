@@ -66,3 +66,5 @@ li {
     display: grid;
     grid-template-rows: repeat(2, 1.5fr);
 }
+
+article.postagem {}

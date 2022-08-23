@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<article class="postagem">
+    <h1>{{posts.title}}</h1>
+
+    {{posts.summary | safe}}
+
+    <p>Escrito por: {{posts.author}}</p>
+    <p>Publicado em: {{posts.created_at}}</p>
+    
+    {{posts.content | safe}}
+    
+</article>
+
+{% endblock  %}

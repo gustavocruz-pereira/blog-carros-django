@@ -6,5 +6,5 @@ def home(request):
     return render(request, 'home.html', {'posts': posts})
 
 def post(request, post_id):
-    post = Post.obj.get(pk=post_id)
-    return render(request, 'post.html', {'posts': post})
+    posts = Post.objects.get(pk=post_id)
+    return render(request, 'post.html', {'posts': posts})
