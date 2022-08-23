@@ -1,0 +1,21 @@
+{%extends 'layout.html' %}
+{% load static %}
+
+{% block sub_header %}
+
+
+      {% for post in posts %}
+        {% if post.published %}
+          <div class="artigo">
+
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.created_at }}
+
+        
+            {{ post.summary | safe }}
+       
+          </div>
+          {% endif %}
+      {% endfor %}
+  
+{% endblock %}
