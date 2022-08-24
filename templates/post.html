@@ -1,16 +1,30 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+{% block title %} {{posts.title}} | {% endblock title %}
 
-{% block content%}
-<article class="postagem">
-    <h1>{{posts.title}}</h1>
 
-    {{posts.summary | safe}}
+    {% block content%}
+    {% if posts.published %}
+    <article class="postagem">
+        
+        
+        <div class="post-content">
+            <h1 class="titulo">{{posts.title}}</h1>
 
-    <p>Escrito por: {{posts.author}}</p>
-    <p>Publicado em: {{posts.created_at}}</p>
-    
-    {{posts.content | safe}}
-    
-</article>
-
+            <h2 class="resumo">{{posts.summary | safe}}</h2>
+            <p class="escrito-por">Escrito por: {{posts.author}}</p>
+            <p class="publicado">Publicado em: {{posts.created_at}}</p>
+            {{posts.content | safe}}
+        </div>
+        
+    </article>
+    {% else %}
+{% endif %}
+    <section class="nao-disponivel">
+        <aside>
+            <h2>⚠ Houve algum erro... ⚠</h2>
+            <p>Este artigo não está disponivel no momento...</p>
+        </aside>
+    </section>
 {% endblock  %}
+
+

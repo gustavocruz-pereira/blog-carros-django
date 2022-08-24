@@ -1,27 +1,26 @@
-{%extends 'layout.html' %}
+{% extends 'layout.html' %}
 {% load static %}
 
 {% include '_header.html' %}
-<section class="car-bg">
-
-</section>
-
 {% block sub_header %}
+  <section class="car-bg">
+    <h1 class="logo">Dream's garage</h1>
 
-
+  </section>
+  <main class="corpo">
       {% for post in posts %}
         {% if post.published %}
           <div class="artigo">
-
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.created_at }}
-
-        
+            <div>
+            <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
+            <img src="{{post.thumb.url}}" style="max-width: 500px; height: auto;">
             {{ post.summary | safe }}
-            <a href="/post/{{post.pk}}">{{post.title}}</a>
+            <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
        
+            </div>
           </div>
           {% endif %}
       {% endfor %}
+    </main>
   
 {% endblock %}

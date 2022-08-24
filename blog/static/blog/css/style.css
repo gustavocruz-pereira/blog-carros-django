@@ -7,8 +7,8 @@
 }
 
 @font-face {
-    font-family: Xenogears;
-    src: url(fonts/Xenogears.ttf);
+    font-family: Dodgv2ci;
+    src: url(fonts/Dodgv2ci.ttf);
 }
 
 /* Elementos */
@@ -42,6 +42,14 @@ li {
     display: inline;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
 
 /* Classes */
 
@@ -60,11 +68,80 @@ li {
 .car-bg {
     background-image: url(../img/thumb.jpg);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: Dodgv2ci;
+    font-size: 50px;
+    color: var(--red-color);
+    text-shadow: 1px 10px 10px var(--black-color);
+}
+
+.corpo {
+    max-width: 1200px;
+    padding: 20px, 80px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
 }
 
 .artigo {
-    display: grid;
-    grid-template-rows: repeat(2, 1.5fr);
+    padding: 20px;
+    border: 1px solid var(--red-color);
 }
 
-article.postagem {}
+
+.ler-mais:hover {
+    color: var(--red-color);
+}
+
+.resumo-home>h2 {
+    font-size: 10px;
+}
+
+
+.postagem>h2,
+.titulo {
+    text-align: center;
+}
+
+.escrito-por {
+    text-transform: capitalize;
+}
+
+.publicado {
+    font-style: italic;
+}
+
+
+.post-content {
+    background-color: white;
+    color: black;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px 40px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.post-content h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.post-content h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.nao-disponivel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -9,6 +9,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Post(models.Model):
     title = models.CharField(max_length=255)
     summary = RichTextField() #  models.CharField(max_length=255)
+    thumb = models.ImageField(upload_to ='media/uploads/%Y/%m/%d/', null=True)
     content = RichTextField()
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     created_at = models.DateField(auto_now_add=True)
