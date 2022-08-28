@@ -1,9 +1,9 @@
 <!doctype html>
+{% load static %}
 <html lang="pt-br">
 
-
 <head>
-      <title>{% block title %} {% endblock title %}Dream's garage</title>
+      <title>{% block title %}{% endblock title %}Dream's garage</title>
       {% include '_header.html' %}
 </head>
 <body>
@@ -12,6 +12,17 @@
                   {% block sub_header %}
 
                   {% endblock %}
+            </div>
+            <div class="ultimos-posts">
+                  <aside>
+                        <ul>
+                              {% for post in posts %}
+                              <li>   
+                                    {{post.title}}     
+                              </li>
+                              {% endfor %}
+                        </ul>
+                  </aside>
             </div>
             <div>
                   {% block content %}

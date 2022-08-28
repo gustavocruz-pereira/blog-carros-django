@@ -18,8 +18,8 @@
 }
 
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--gray-color);
+    color: lime;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -57,6 +57,7 @@ a:visited {
     font-family: Xenogears;
     background-color: var(--gray-color);
     height: 50px;
+    position: fixed;
 }
 
 .menu-content {
@@ -97,6 +98,10 @@ a:visited {
 
 .ler-mais:hover {
     color: var(--red-color);
+}
+
+.resumo {
+    font-size: 30px;
 }
 
 .resumo-home>h2 {
@@ -144,4 +149,8 @@ a:visited {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.ultimos-posts {
+    color: red;
 }
