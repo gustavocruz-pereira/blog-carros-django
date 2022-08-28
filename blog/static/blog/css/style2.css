@@ -19,7 +19,6 @@
 
 body {
     background-color: var(--gray-color);
-    color: lime;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -54,16 +53,16 @@ a:visited {
 /* Classes */
 
 .menu {
-    font-family: Xenogears;
-    background-color: var(--gray-color);
-    height: 50px;
-    position: fixed;
+    font-family: Dodgv2ci;
+    background-color: var(--black-color);
+    color: white;
+    height: 45px;
+    width: 100%;
 }
 
 .menu-content {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .car-bg {
@@ -131,7 +130,7 @@ a:visited {
     border-radius: 5px;
     padding: 20px 40px;
     text-align: justify;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .post-content h1 {
