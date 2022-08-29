@@ -22,12 +22,14 @@
             <div class="comentarios-content">
                 
                 <h3>{{comentarios.count}} Comentario(s)</h3>
-                    {% for comentario in comentarios %}
-                        <p>{{comentario.data_comentario}}</p>
-                        <p>{{comentario.nome_comentario}} comentou:</p>
+                <div class="coment-usuario">    
+                {% for comentario in comentarios %}
+                        <p class="data-coment">{{comentario.data_comentario}}</p>
+                        <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
                         
-                        <p> {{comentario.comentario}} </p> 
+                        <p class="corpo-coment"> {{comentario.comentario}} </p> 
                     {% endfor %}
+                </div>
             </div>
         </aside>
         {% endif %}

@@ -167,3 +167,25 @@ a:visited {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 50px;
 }
+
+.coment-usuario {
+    margin: 10px;
+}
+
+.coment-usuario p {
+    margin: 10px;
+    padding: 5px, 0px;
+}
+
+.nome-coment {
+    font-weight: bold;
+}
+
+.data-coment {
+    font-style: italic;
+}
+
+.corpo-coment {
+    border-bottom: 1px solid var(--black-color);
+    padding-bottom: 10px;
+}
