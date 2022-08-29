@@ -1,39 +1,43 @@
+{% extends 'layout.html' %}
+{% include '_header.html' %}
 {% block title %} {{posts.title}} | {% endblock title %}
-
 
     {% block content%}
     {% if posts.published %}
-    <article class="postagem">
-        
-        
-        <div class="post-content">
-            <h1 class="titulo">{{posts.title}}</h1>
+        <article class="postagem">
+            
+            
+            <div class="post-content">
+                <h1 class="titulo">{{posts.title}}</h1>
 
-            <h2 class="resumo">{{posts.summary | safe}}</h2>
-            <p class="escrito-por">Escrito por: {{posts.author}}</p>
-            <p class="publicado">Publicado em: {{posts.created_at}}</p>
-            {{posts.content | safe}}
-        </div>
-        
-    </article>
-    <div class="comentarios">
+                <h2 class="resumo">{{posts.summary | safe}}</h2>
+                <p class="escrito-por">Escrito por: {{posts.author}}</p>
+                <p class="publicado">Publicado em: {{posts.created_at}}</p>
+                {{posts.content | safe}}
+            </div>
+            
+        </article>
         {% if comentarios %}
-            {% for coment in comentarios  %}
-                <h3>Comentarios ({{coment.count}})</h3>
-                <p>Nome: {{coment.nome_comentario}}</p>
-                <p>Data: {{coment.data_comentario}}</p>
-                <p>{{coment.comentario}}</p>
-            {% endfor %}
-        {% endif %}
-    </div>
-    {% else %}
-
-    <section class="nao-disponivel">
-        <aside>
-            <h2>⚠ Houve algum erro... ⚠</h2>
-            <p>Este artigo não está disponivel no momento...</p>
+        <aside class="comentarios">
+            <div class="comentarios-content">
+                
+                <h3>{{comentarios.count}} Comentario(s)</h3>
+                    {% for comentario in comentarios %}
+                        <p>{{comentario.data_comentario}}</p>
+                        <p>{{comentario.nome_comentario}} comentou:</p>
+                        
+                        <p> {{comentario.comentario}} </p> 
+                    {% endfor %}
+            </div>
         </aside>
-    </section>
+        {% endif %}
+    {% else %}
+        <section class="nao-disponivel">
+            <aside>
+                <h2>⚠ Houve algum erro... ⚠</h2>
+                <p>Este artigo não está disponivel no momento...</p>
+            </aside>
+        </section>
     {% endif %}
 {% endblock  %}
 

@@ -153,3 +153,17 @@ a:visited {
 .ultimos-posts {
     color: red;
 }
+
+.comentarios {}
+
+.comentarios-content {
+    background-color: var(--white-color);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    border-radius: 5px;
+    padding: 20px 40px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+}
