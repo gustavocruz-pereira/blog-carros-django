@@ -25,3 +25,6 @@ urlpatterns = [
     path('', views.home),
     path('post/<int:post_id>', views.post)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = "blog.views.erro404"
