@@ -31,7 +31,7 @@
                     {% endfor %}
                 </div>
             <div>
-                <form action="{{post_id}}" method="POST">
+                <form action="{{post_comentario}}" method="POST">
                     {% csrf_token %}
                     <fieldset>
                         <input type="text" name="nome_comentario" id="nome_comentario" placeholder="Seu Nome">
