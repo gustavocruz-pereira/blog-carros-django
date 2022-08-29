@@ -13,10 +13,9 @@
           <div class="artigo">
             <div>
             <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
-            <img src="{{post.thumb.url}}" style="max-width: 500px; height: auto;">
+            <a href="/post/{{post.pk}}"><img src="{{post.thumb.url}}"></a>
             {{ post.summary | safe }}
             <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
-       
             </div>
           </div>
           {% endif %}

@@ -15,7 +15,7 @@
                 <p class="publicado">Publicado em: {{posts.created_at}}</p>
                 {{posts.content | safe}}
             </div>
-            
+            <p></p>
         </article>
         {% if comentarios %}
         <aside class="comentarios">
@@ -24,8 +24,8 @@
                 <h3>{{comentarios.count}} Comentario(s)</h3>
                 <div class="coment-usuario">    
                 {% for comentario in comentarios %}
-                        <p class="data-coment">{{comentario.data_comentario}}</p>
-                        <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
+                <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
+                <p class="data-coment">{{comentario.data_comentario}}</p>
                         
                         <p class="corpo-coment"> {{comentario.comentario}} </p> 
                     {% endfor %}

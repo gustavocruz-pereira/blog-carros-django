@@ -68,6 +68,7 @@ a:visited {
 .car-bg {
     background-image: url(../img/thumb.jpg);
     background-size: cover;
+    background-position: center center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,14 +87,26 @@ a:visited {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 25px;
 }
 
 .artigo {
     padding: 20px;
-    border: 1px solid var(--red-color);
+    color: var(--white-color);
+    border-bottom: 1px solid var(--red-color);
+    background-color: var(--black-color);
+    border-radius: 10px;
 }
 
+
+.artigo img {
+    max-width: 500px;
+    height: auto;
+}
+
+.ler-mais {
+    margin: 0 auto;
+}
 
 .ler-mais:hover {
     color: var(--red-color);
@@ -154,7 +167,6 @@ a:visited {
     color: red;
 }
 
-.comentarios {}
 
 .comentarios-content {
     background-color: var(--white-color);
@@ -188,4 +200,33 @@ a:visited {
 .corpo-coment {
     border-bottom: 1px solid var(--black-color);
     padding-bottom: 10px;
+}
+
+/* Media query*/
+
+@media (max-width: 1130px) {
+    .corpo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .artigo img {
+        height: 250px;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 465px) {
+
+    .artigo img {
+        height: 125px;
+        width: auto;
+        align-items: center;
+    }
+
+    .post-content img {
+        height: 200px;
+        width: auto;
+    }
 }
