@@ -63,11 +63,13 @@ a:visited {
     color: white;
     height: 45px;
     width: 100%;
+
 }
 
 .menu-content {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .car-bg {
@@ -119,6 +121,10 @@ h3.logo {
 .artigo img {
     max-width: 500px;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
 .ler-mais:hover {
@@ -148,6 +154,22 @@ h3.logo {
     color: var(--red-color);
 }
 
+.mercadorias {
+    max-width: 1200px;
+    padding: 20px, 80px;
+    margin: 0 auto;
+    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.img-produto {
+    width: 250px;
+    height: auto;
+}
+
+.produtos {}
 
 .postagem>h2,
 .titulo {
@@ -172,6 +194,18 @@ h3.logo {
     padding: 20px 40px;
     text-align: justify;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-content h1 {
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.img-post-thumb {
+    width: 750px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post-content h1 {

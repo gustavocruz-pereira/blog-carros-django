@@ -33,7 +33,15 @@
       <h3 class="see-all-articles"><a href="{% url 'artigos' %}">VER TODOS OS ARTIGOS</a></h3>
   </main>
   <section>
-    
+    <div class="mercadorias">
+      {% for produto in produtos %}
+        <div class="produtos">
+          <h2>{{produto.nome_produto}}</h2>
+          <img class="img-produto" src="{{produto.imagem_produto.url}}" alt="">
+          <p>${{produto.preco_produto}}</p>
+        </div>
+      {% endfor %}
+    </div>
   </section> 
   {% include '_footer.html' %}
   

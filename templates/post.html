@@ -10,7 +10,7 @@
             
             <div class="post-content">
                 <h1 class="titulo">{{posts.title}}</h1>
-
+                <img class="img-post-thumb" src="{{posts.thumb.url}}" alt="">
                 <h2 class="resumo">{{posts.summary | safe}}</h2>
                 <p class="escrito-por">Escrito por: {{posts.author}}</p>
                 <p class="publicado">Escrito: {{posts.created_at | naturalday}}</p>
