@@ -1,0 +1,16 @@
+{% include '_header.html' %}
+<main class="corpo">
+    {% for post in posts %}
+      {% if post.published %}
+        <div class="artigo">
+          <div>
+          <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
+          <a href="/post/{{post.pk}}"><img src="{{post.thumb.url}}"></a>
+          {{ post.summary | safe }}
+          <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
+          </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</main>
+{% include '_footer.html' %}

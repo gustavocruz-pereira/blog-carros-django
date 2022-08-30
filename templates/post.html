@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% include '_header.html' %}
+{% load humanize %}
 {% block title %} {{posts.title}} | {% endblock title %}
 
     {% block content%}
@@ -12,16 +13,16 @@
 
                 <h2 class="resumo">{{posts.summary | safe}}</h2>
                 <p class="escrito-por">Escrito por: {{posts.author}}</p>
-                <p class="publicado">Publicado em: {{posts.created_at}}</p>
+                <p class="publicado">Escrito: {{posts.created_at | naturalday}}</p>
                 {{posts.content | safe}}
             </div>
             <p></p>
         </article>
-        {% if comentarios %}
+        
         <aside class="comentarios">
             <div class="comentarios-content">
-                
                 <h3>{{comentarios.count}} Comentario(s)</h3>
+                {% if comentarios %}
                 <div class="coment-usuario">    
                 {% for comentario in comentarios %}
                 <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
@@ -31,13 +32,15 @@
                     {% endfor %}
                 </div>
             <div>
+                {% endif %}
                 <form action="{{post_comentario}}" method="POST">
                     {% csrf_token %}
                     <fieldset>
                         <input type="text" name="nome_comentario" id="nome_comentario" placeholder="Seu Nome">
+                        <input type="text" name="" id="">
                     </fieldset>
                     <fieldset>
-                        <textarea name="comentario" id="comentario" cols="100" rows="20" placeholder="Digite seu comentario aqui..."></textarea>
+                        <textarea name="comentario" id="comentario" cols="80" rows="20" placeholder="Digite seu comentario aqui..."></textarea>
                     </fieldset>
                     <fieldset>
                         <button type="submit">Enviar</button>
@@ -46,7 +49,7 @@
             </div>
             </div>
         </aside>
-        {% endif %}
+       
     {% else %}
         <section class="nao-disponivel">
             <aside>
@@ -55,6 +58,8 @@
             </aside>
         </section>
     {% endif %}
+    {% include '_footer.html' %}
 {% endblock  %}
+
 
 

@@ -10,18 +10,26 @@
   <main class="corpo">
       {% for post in posts %}
         {% if post.published %}
-          <div class="artigo">
-            <div>
-            <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
-            <a href="/post/{{post.pk}}"><img src="{{post.thumb.url}}"></a>
-            {{ post.summary | safe }}
-            <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
+          {% if forloop.counter <= 4 %}
+            <div class="artigo">
+              <div>
+              <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
+              <a href="/post/{{post.pk}}"><img src="{{post.thumb.url}}"></a>
+              {{ post.summary | safe }}
+              <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
+              </div>
             </div>
-          </div>
+            
+            {% endif %}
           {% endif %}
       {% endfor %}
+      <h3 class="see-all-articles"><a href="{% url 'artigos' %}">VER TODOS OS ARTIGOS</a></h3>
   </main>
+
   <section>
     
   </section> 
+  {% include '_footer.html' %}
+  
 {% endblock %}
+

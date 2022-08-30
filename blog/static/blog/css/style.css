@@ -43,6 +43,7 @@ li {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 a:visited {
@@ -79,6 +80,10 @@ a:visited {
     font-size: 50px;
     color: var(--red-color);
     text-shadow: 1px 10px 10px var(--black-color);
+}
+
+h3.logo {
+    font-size: 15px;
 }
 
 .corpo {
@@ -163,11 +168,6 @@ a:visited {
     text-align: center;
 }
 
-.ultimos-posts {
-    color: red;
-}
-
-
 .comentarios-content {
     background-color: var(--white-color);
     max-width: 800px;
@@ -202,64 +202,27 @@ a:visited {
     padding-bottom: 10px;
 }
 
-.content {
-    height: 520px;
-    width: 935px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.rodape {
+    background-color: var(--black-color);
+    width: 98, 5%;
+    height: auto;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.navigation {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
+.contato {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.bar {
-    width: 70px;
-    height: 17px;
-    border: 2px solid white;
-    margin: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.bar:hover {
-    background-color: #3DEBB0;
-}
-
-input {
-    display: none;
-}
-
-.slides {
-    display: flex;
-    width: 100%;
-    height: -100%;
-}
-
-.slide {
-    transition: .6s;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-#slide1:checked~.s1 {
-    margin-left: 0;
-}
-
-#slide2:checked~.s1 {
-    margin-left: 20%;
+.contato img {
+    height: 50px;
+    width: 50px;
+    padding: 10px
 }
 
 /* Media query*/
