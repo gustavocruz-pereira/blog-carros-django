@@ -4,6 +4,7 @@
     --red-color: red;
     --gray-color: rgb(33, 33, 33);
     --white-color: white;
+    --invisible: rgba(255, 253, 253, 0.028);
 }
 
 @font-face {
@@ -64,6 +65,10 @@ a:visited {
     height: 45px;
     width: 100%;
 
+}
+
+.menu li {
+    display: inline;
 }
 
 .menu-content {
@@ -321,6 +326,10 @@ textarea {
     padding: 10px
 }
 
+.close-menu {
+    display: none;
+}
+
 /* Media query*/
 
 @media (max-width: 1130px) {
@@ -351,7 +360,28 @@ textarea {
     }
 }
 
-@media (max-width: 465px) {
+@media (max-width: 500px) {
+    .menu {
+        bottom: 0px;
+        text-align: center;
+        display: none;
+    }
+
+    .menu-content {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        justify-content: space-around;
+        position: fixed;
+    }
+
+    .menu ul {
+        background-color: var(--black-color);
+    }
+
+    .post-content {
+        padding: 10px;
+    }
 
     .artigo img {
         height: 125px;
@@ -359,14 +389,35 @@ textarea {
         align-items: center;
     }
 
-    .post-content.text~img {
-        height: 100px;
-        width: auto;
-    }
-
-
     .img-post-thumb {
-        height: 125px;
+        height: 200px;
         width: auto;
     }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--invisible);
+        color: var(--red-color);
+        font-size: 4.5rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+
+    .close-menu:checked~.menu {
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+
 }
