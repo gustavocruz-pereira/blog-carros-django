@@ -1,22 +1,28 @@
 {% extends 'layout.html' %}
 {% include '_header.html' %}
 {% load humanize %}
+{% load static %}
 {% block title %} {{posts.title}} | {% endblock title %}
 
     {% block content%}
     {% if posts.published %}
         <article class="postagem">
-            
-            
+            <aside>
+                <ul class="redes">
+                    <li><a href="#"><img src="{% static 'blog/img/facebook.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'blog/img/facebook.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'blog/img/facebook.png' %}" alt=""></a></li>
+                </ul>
+            </aside>
+
             <div class="post-content">
                 <h1 class="titulo">{{posts.title}}</h1>
                 <img class="img-post-thumb" src="{{posts.thumb.url}}" alt="">
                 <h2 class="resumo">{{posts.summary | safe}}</h2>
                 <p class="escrito-por">Escrito por: {{posts.author}}</p>
                 <p class="publicado">Escrito: {{posts.created_at | naturalday}}</p>
-                {{posts.content | safe}}
+                <div class="post-content text">{{posts.content | safe}}</div>
             </div>
-            <p></p>
         </article>
         
         <aside class="comentarios">

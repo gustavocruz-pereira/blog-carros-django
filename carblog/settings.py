@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'comments',
     'produtos',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

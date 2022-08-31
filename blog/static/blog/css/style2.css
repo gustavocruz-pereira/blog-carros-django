@@ -184,6 +184,13 @@ h3.logo {
     font-style: italic;
 }
 
+.redes {
+    position: fixed;
+}
+
+.redes>li {
+    display: block;
+}
 
 .post-content {
     background-color: var(--white-color);
@@ -329,6 +336,21 @@ textarea {
 
 }
 
+@media (max-width: 970px) {
+    .redes {
+        display: none;
+    }
+
+    /*.redes li {
+        display: inline;
+    }*/
+
+    .img-post-thumb {
+        height: 250px;
+        width: auto;
+    }
+}
+
 @media (max-width: 465px) {
 
     .artigo img {
@@ -337,8 +359,14 @@ textarea {
         align-items: center;
     }
 
-    .post-content img {
-        height: 200px;
+    .post-content.text~img {
+        height: 100px;
+        width: auto;
+    }
+
+
+    .img-post-thumb {
+        height: 125px;
         width: auto;
     }
 }
