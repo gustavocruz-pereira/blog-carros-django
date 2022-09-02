@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="corpo">
+{% for prod in produtos %}
+    <div class="artigo">
+        <div>
+            <h2>{{prod.nome_produto }}</a></h2>
+            <img src="{{prod.imagem_produto.url}}"></a>
+            <br>
+            <p class="preco">R$ {{prod.preco_produto}}</p>
+            <br>
+            <p>{{prod.descr_produto}}</p>
+            <button class="comprar">Comprar</button>
+            </div>
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock content %}
+
+

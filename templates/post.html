@@ -9,6 +9,7 @@
         <article class="postagem">
             <aside>
                 <ul class="redes">
+                    <li><a href="#"><img src="{% static 'blog/img/share.png' %}" alt=""></a></li>
                     <li><a href="#"><img src="{% static 'blog/img/facebook.png' %}" alt=""></a></li>
                     <li><a href="#"><img src="{% static 'blog/img/tel.png' %}" alt=""></a></li>
                     <li><a href="#"><img src="{% static 'blog/img/twitter.png' %}" alt=""></a></li>
@@ -27,20 +28,28 @@
         
         <aside class="comentarios">
             <div class="comentarios-content">
-                <h3>{{comentarios.count}} Comentario(s)</h3>
-                {% if comentarios %}
-                <div class="coment-usuario">    
+                    
+                
+                <div class="coment-usuario">
+                    <h3>{{comentarios.count}} Comentario(s)</h3>
                 {% for comentario in comentarios %}
-                <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
-                <p class="data-coment">{{comentario.data_comentario}}</p>
+                    {% if comentario.publicado_coment %}  
+                        <p><strong  class="nome-coment">{{comentario.nome_comentario}}</strong> comentou:</p>
+                        <p class="data-coment">{{comentario.data_comentario}}</p>
                         
                         <p class="corpo-coment"> {{comentario.comentario}} </p> 
-                    {% endfor %}
+                        
+                    {% else %}
+                        <p class="comentario-oculto">Este comentário foi ocultado</p>
+                    {% endif %}
+                {% endfor %}
                 </div>
             <div>
-                {% endif %}
+                
+                
                 <form action="{{post_comentario}}" method="POST">
                     {% csrf_token %}
+                    <h3>Escreva seu comentário</h3>
                     <fieldset>
                         <input type="text" name="nome_comentario" id="nome_comentario" placeholder="Seu Nome">
                     </fieldset>

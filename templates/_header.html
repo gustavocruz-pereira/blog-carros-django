@@ -6,7 +6,9 @@
     
     <link rel="stylesheet" href="{% static 'blog/css/style2.css' %}">
     <link rel="shortcut icon" href="{% static 'blog/img/ico.png' %}" type="image/x-icon">
+    <!--<script src="{% static 'blog/js/controles.js' %}"></script>-->
     
+
 <header>
       <input id="close-menu" class="close-menu" type="checkbox" aria-label="Fechar menu" role="button">
       <label class="close-menu-label" for="close-menu" title="close menu"></label>
@@ -14,7 +16,7 @@
       <ul onclick="getElementById('close-menu').checked = false;" class="menu-content">
             <li><a href="{% url 'home' %}">Dream's garage</a></li>
             <li><a href="{% url 'artigos' %}">Artigos</a></li>
-            <li><a href="#">Mercadorias</a></li>
+            <li><a href="{% url 'mercadorias' %}">Mercadorias</a></li>
             <li><a href="#contato">Contato</a></li>
       </ul>
     </nav> 

@@ -31,7 +31,72 @@
       {% endfor %}
       <h3 class="see-all-articles"><a href="{% url 'artigos' %}">VER TODOS OS ARTIGOS</a></h3>
   </main>
-  <section>
+  
+  <section class="mercadoria">
+
+    <h2 class="logo">Mercadorias</h2>
+    <div class="slider">
+      <div class="slider-tracker">
+        {% for prod in produtos %}
+          <div class="slide">
+              <a href="{% url 'mercadorias' %}"><img src="{{prod.imagem_produto.url}}" alt=""></a>     
+          </div>
+          <br>
+          <a href="{% url 'mercadorias' %}"><p class="desc-prod">{{prod.descr_produto}}</p></a>
+        {% endfor %}
+        {% for prod in produtos %}
+          <div class="slide">
+              <img src="{{prod.imagem_produto.url}}" alt="">
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+    <!--<div class="container">
+      <button class="arrow-left" aria-label="Previous-image">🢀</button>
+      <button class="arrow-right" aria-label="Next-image">🢂</button>
+      <div class="gallery-wrapper">
+        <div class="gallery">
+          <img src="{% static 'blog/img/caneca.webp' %}" alt="" class="item current-item">
+          <img src="{% static 'blog/img/camisa.webp' %}" alt="" class="item">
+          <img src="{% static 'blog/img/blusa.webp' %}"  alt="" class="item">
+        </div>
+      </div>
+    </div>
+    <script>
+      const controls = document.querySelectorAll(".control");
+      let currentItem = 0;
+      const items = document.querySelectorAll(".item");
+      const maxItems = items.length;
+
+      controls.forEach((control) => {
+          control.addEventListener("click", (e) => {
+              isLeft = e.target.classList.contains("arrow-left");
+
+              if (isLeft) {
+                  currentItem -= 1;
+              } else {
+                  currentItem += 1;
+              }
+
+              if (currentItem >= maxItems) {
+                  currentItem = 0;
+              }
+
+              if (currentItem < 0) {
+                  currentItem = maxItems - 1;
+              }
+
+              items.forEach((item) => item.classList.remove("current-item"));
+
+              items[currentItem].scrollIntoView({
+                  behavior: "smooth",
+                  inline: "center"
+              });
+
+              items[currentItem].classList.add("current-item");
+          });
+      });
+    </script>
     <div class="mercadorias">
       {% for produto in produtos %}
         <div class="produtos">
@@ -40,9 +105,7 @@
           <p>${{produto.preco_produto}}</p>
         </div>
       {% endfor %}
-    </div>
+    </div>-->
   </section> 
-  {% include '_footer.html' %}
-  
 {% endblock %}
 

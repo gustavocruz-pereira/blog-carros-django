@@ -5,7 +5,7 @@ from produtos.models import Produtos
 
 def home(request):
     posts = Post.objects.all().order_by('-id')
-    produtos = Produtos.objects.all()
+    produtos = Produtos.objects.all()[:4]
     return render(request, 'home.html', {'posts': posts, 'produtos': produtos, 'range': range(2)})
 
 def post(request, post_id):
@@ -16,6 +16,10 @@ def post(request, post_id):
 def artigos(request):
     posts = Post.objects.all()
     return render(request, 'artigos.html', {'posts' : posts})
+
+def mercadorias(request):
+    produtos = Produtos.objects.all()
+    return render(request, 'mercadorias.html', {'produtos' : produtos,} )
 
 def erro404(request, exeption):
     return render(request, 'erro_404.html')
