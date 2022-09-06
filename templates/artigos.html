@@ -2,6 +2,12 @@
 <div class="ultimos-artigos">
     <h2>Todos os artigos:</h2>
   </div>
+<form method="GET" action="">
+  <div class="input-group-prepend">
+    <input type="text" class="form-control" placeholder="Pesquisar artigo..." name="search" id="search">
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Buscar</button>
+  </div>
+</form>
 <main class="corpo">
     {% for post in posts %}
       {% if post.published %}

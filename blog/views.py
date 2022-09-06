@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from blog.models import Post
 from comments.models import Comentario
 from produtos.models import Produtos
@@ -15,6 +15,10 @@ def post(request, post_id):
 
 def artigos(request):
     posts = Post.objects.all()
+    busca = request.GET.get('search')
+    if busca:
+        posts = Post.objects.filter(title__icontains = busca)
+        
     return render(request, 'artigos.html', {'posts' : posts})
 
 def mercadorias(request):

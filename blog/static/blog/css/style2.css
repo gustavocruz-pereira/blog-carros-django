@@ -478,10 +478,8 @@ textarea {
         align-items: center;
     }
 
-    .slider-tracker {
-        display: flex;
-        width: calc(100px * 4);
-        animation: scroll 50s linear infinite;
+    .mercadoria {
+        display: none;
     }
 
     .img-post-thumb {
