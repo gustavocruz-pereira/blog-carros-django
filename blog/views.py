@@ -18,11 +18,15 @@ def artigos(request):
     busca = request.GET.get('search')
     if busca:
         posts = Post.objects.filter(title__icontains = busca)
-        
+
     return render(request, 'artigos.html', {'posts' : posts})
 
 def mercadorias(request):
     produtos = Produtos.objects.all()
+    busca = request.GET.get('search')
+    if busca:
+        produtos = Produtos.objects.filter(nome_produto__icontains = busca)
+        
     return render(request, 'mercadorias.html', {'produtos' : produtos,} )
 
 def erro404(request, exeption):

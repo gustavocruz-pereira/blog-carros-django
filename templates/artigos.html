@@ -1,13 +1,11 @@
+{% extends "layout.html" %}
 {% include '_header.html' %}
+{% block title %} Artigos | {% endblock title %}
+{% block content %}
 <div class="ultimos-artigos">
     <h2>Todos os artigos:</h2>
-  </div>
-<form method="GET" action="">
-  <div class="input-group-prepend">
-    <input type="text" class="form-control" placeholder="Pesquisar artigo..." name="search" id="search">
-    <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Buscar</button>
-  </div>
-</form>
+</div>
+{% include "_busca.html" %}
 <main class="corpo">
     {% for post in posts %}
       {% if post.published %}
@@ -22,4 +20,5 @@
         {% endif %}
     {% endfor %}
 </main>
+{% endblock %}
 {% include '_footer.html' %}

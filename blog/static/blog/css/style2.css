@@ -100,7 +100,7 @@ h3.logo {
 
 .corpo {
     max-width: 1200px;
-    padding: 20px, 80px;
+    padding: 20px, 40px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -123,6 +123,18 @@ h3.logo {
     border-bottom: 1px solid var(--red-color);
     background-color: var(--black-color);
     border-radius: 10px;
+}
+
+.campo-busca {
+    padding: 20px;
+}
+
+.campo-busca button {
+    background-color: var(--red-color);
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--white-color);
 }
 
 .preco {

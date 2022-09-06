@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block content %}
+<div class="ultimos-artigos">
+    <h2>Todos os produtos:</h2>
+</div>
+{% include "_busca.html" %}
 
 <div class="corpo">
 {% for prod in produtos %}
@@ -17,6 +21,12 @@
     </div>
 
 {% endfor %}
+{% if not produtos %}
+    <div class="busca-erro">
+        <h2 class="ultimos-artigos">Nenhum produto encontrado</h2>
+        <img src="{% static 'blog/img/erro_busca.png' %}" alt="">
+    </div>
+{% endif %}
 </div>
 
 {% endblock content %}
