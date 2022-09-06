@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block content %}
+{% block title %} Mercadorias | {% endblock title %}
 <div class="ultimos-artigos">
     <h2>Todos os produtos:</h2>
 </div>
@@ -21,13 +22,14 @@
     </div>
 
 {% endfor %}
+
+</div>
 {% if not produtos %}
     <div class="busca-erro">
         <h2 class="ultimos-artigos">Nenhum produto encontrado</h2>
         <img src="{% static 'blog/img/erro_busca.png' %}" alt="">
     </div>
 {% endif %}
-</div>
 
 {% endblock content %}
 

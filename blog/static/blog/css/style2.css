@@ -137,6 +137,16 @@ h3.logo {
     border: 1px solid var(--white-color);
 }
 
+.busca-erro {
+    display: grid;
+    place-items: center;
+}
+
+.busca-erro img {
+    width: 100px;
+    height: auto;
+}
+
 .preco {
     font-size: 40px;
 }
