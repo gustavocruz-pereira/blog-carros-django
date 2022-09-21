@@ -15,6 +15,9 @@
           <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
           <a href="/post/{{post.pk}}"><img src="{{post.thumb.url}}"></a>
           {{ post.summary | safe }}
+          <br>
+          <p>{{post.created_at}}</p>
+          <br>
           <p class="ler-mais"><a href="/post/{{post.pk}}">Ler mais...</a></p>
           </div>
         </div>

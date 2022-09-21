@@ -63,23 +63,27 @@ a:visited {
     font-family: Dodgv2ci;
     background: linear-gradient(72deg, var(--black-color) 1%, var(--gray-color));
     color: white;
-    height: 45px;
-    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
 
 }
 
 .menu li {
     display: inline;
+    max-width: 1000px;
 }
 
 .menu-content {
+    padding-top: 10px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
+
 .car-bg {
-    background-image: url(../img/thumb.jpg);
+    background-image: url(../img/thumb2.jpg);
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -105,7 +109,6 @@ h3.logo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    border-bottom: 2px solid var(--red-color);
 }
 
 .ultimos-artigos {
@@ -120,7 +123,6 @@ h3.logo {
     margin-top: 30px;
     padding: 20px;
     color: var(--white-color);
-    border-bottom: 1px solid var(--red-color);
     background-color: var(--black-color);
     border-radius: 10px;
 }
@@ -191,6 +193,7 @@ h3.logo {
     text-align: center;
     font-family: Dodgv2ci;
     transition: .5s;
+    display: flex;
 }
 
 
