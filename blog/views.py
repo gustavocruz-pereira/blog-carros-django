@@ -4,7 +4,7 @@ from comments.models import Comentario
 from produtos.models import Produtos
 
 def home(request):
-    posts = Post.objects.all().order_by('-id')
+    posts = Post.objects.filter(published=True).order_by('-id')
     produtos = Produtos.objects.all()[:4]
     return render(request, 'home.html', {'posts': posts, 'produtos': produtos, 'range': range(2)})
 

@@ -14,7 +14,7 @@
   <main class="corpo">
       {% for post in posts %}
         {% if post.published %}
-          {% if forloop.counter <= 4 %}
+          {% if forloop.counter <= 6 %}
             <div class="artigo">
               <div>
               <h2><a href="/post/{{post.pk}}">{{ post.title }}</a></h2>
