@@ -216,6 +216,7 @@ h3.logo {
     place-items: center;
     overflow: hidden;
     background-color: var(--black-color);
+    border-radius: 10px;
 }
 
 .slider-tracker {
