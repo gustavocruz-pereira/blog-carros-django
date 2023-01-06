@@ -7,10 +7,10 @@
     <title>{% block title %}{% endblock title %}Dream's Garage</title>
 </head>
 <body>
+    {% include '_partials/_menu.html' %}
     {% block content %}
     
     {% endblock content %}
-    
 </body>
-
+    {% include '_partials/_footer.html' %}
 </html>
