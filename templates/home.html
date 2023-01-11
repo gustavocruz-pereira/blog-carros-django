@@ -4,5 +4,13 @@
 <h1>Lorem Ipsum</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem obcaecati illum ut omnis. Quam, officiis? Delectus, suscipit impedit ipsa, optio possimus neque laboriosam quod, laborum cupiditate voluptatibus quas reprehenderit praesentium!
 </p>
+
+<h1> Last posts: </h1>
+ <ul>
+    {% for post in posts %}
+     <li> {{ post.title }} - {{ post.summary }}</li>
+    {% endfor %}
+ </ul>
+
 {% endblock content %}
 
