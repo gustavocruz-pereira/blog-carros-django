@@ -7,11 +7,42 @@
 </p>
 
 <h1> Last posts: </h1>
- <ul>
-    {% for post in posts %}
-     <li> <a href=#>{{ post.title }} - {{ post.summary }}</a></li>
-    {% endfor %}
- </ul>
+
+<div class="container">
+   <div class="row">
+     {% for post in posts %}
+       <div class="col-md-6">
+         <div class="card mb-4">
+           <div class="card-body">
+             <h5 class="card-title">{{ post.title }}</h5>
+             <p class="card-text">{{ post.summary }}</p>
+             {% if post.thumb %}
+               <img src="{{ post.thumb.url }}" alt="" class="img-fluid w-100" style="max-width: 300px;">
+             {% endif %}
+             <div class="mt-auto">
+               <a href="#" class="btn btn-primary">Read More</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     {% endfor %}
+   </div>
+ </div>
+ 
+
+<!--
+   <ul>
+      {% for post in posts %}
+         <li> <a href=#>{{ post.title }} - {{ post.summary }}</a></li>
+         {% if post.thumb %}
+            <img src="{{ post.thumb.url }}" alt="">
+         {% endif %}
+      {% endfor %}
+   </ul>
+ -->
+
+
 
 {% endblock content %}
+
 

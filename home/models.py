@@ -10,8 +10,7 @@ class Post(models.Model):
     summary = models.CharField(max_length=255)
     content = RichTextField()
     author = models.ForeignKey(User, on_delete=models.PROTECT)
-    thumb = models.ImageField(upload_to='post_img/%Y/%m/%d', blank=True,
-                                    null=True)
+    thumb = models.ImageField(upload_to='post_img/%Y/%m/%d', null=False)
     created_at = models.DateField(auto_now_add=True)
     published = models.BooleanField(default=False)
 
